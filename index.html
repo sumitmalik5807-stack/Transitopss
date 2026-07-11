@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TransitOps — Smart Transport Operations</title>
+
+  <!-- Link CSS file -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Link JavaScript file -->
+  <script src="script.js" defer></script>
+  
+
+</head>
+
+<body>
+  <!-- LOGIN SCREEN -->
+  <section id="loginScreen">
+    <div class="login-hero">
+      <div class="brand">
+        <div class="brand-mark">🚌</div>
+        TransitOps
+      </div>
+
+      <h1>Operate every mile with confidence.</h1>
+
+      <p>
+        One workspace for your vehicles, drivers, trips, maintenance,
+        expenses, and fleet analytics.
+      </p>
+
+      <div class="features">
+        <div class="feature">✓ Real-time fleet availability</div>
+        <div class="feature">✓ Driver compliance controls</div>
+        <div class="feature">✓ Automated trip workflows</div>
+        <div class="feature">✓ Cost and efficiency analytics</div>
+      </div>
+    </div>
+
+    <div class="login-panel">
+      <form class="login-box" onsubmit="login(event)">
+        <div class="brand dark-brand">
+          <div class="brand-mark">🚌</div>
+          TransitOps
+        </div>
+
+        <h2>Welcome back</h2>
+        <p>Sign in to manage your transport operations.</p>
+
+        <label>
+          Email
+          <input id="email" type="email" value="manager@transitops.com" required />
+        </label>
+
+        <label>
+          Password
+          <input id="password" type="password" value="transit123" required />
+        </label>
+
+        <button class="btn btn-primary full-btn">
+          Sign in to TransitOps
+        </button>
+
+        <p class="demo-text">
+          Demo password: <b>transit123</b><br />
+          Emails: manager@transitops.com, dispatcher@transitops.com,
+          safety@transitops.com, finance@transitops.com
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- APPLICATION -->
+  <div id="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">🚌</div>
+        <span>TransitOps</span>
+      </div>
+
+      <nav class="nav">
+        <button class="active" onclick="navigate('dashboard', this)">▦ <span>Dashboard</span></button>
+        <button onclick="navigate('vehicles', this)">▣ <span>Vehicles</span></button>
+        <button onclick="navigate('drivers', this)">♙ <span>Drivers</span></button>
+        <button onclick="navigate('trips', this)">⌁ <span>Trips</span></button>
+        <button onclick="navigate('maintenance', this)">⚒ <span>Maintenance</span></button>
+        <button onclick="navigate('expenses', this)">◫ <span>Fuel & Expenses</span></button>
+        <button onclick="navigate('reports', this)">◔ <span>Reports</span></button>
+      </nav>
+
+      <div class="user-card">
+        <b id="userName">Fleet Manager</b>
+        <small id="userRole">Fleet Manager</small>
+        <button class="logout" onclick="logout()">Sign out</button>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <h2 id="pageTitle">Operations Dashboard</h2>
+          <p id="today"></p>
+        </div>
+        <span class="badge available">● System operational</span>
+      </header>
+
+      <div class="content" id="view"></div>
+    </main>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal"></div>
+  </div>
+
+  <!-- TOAST MESSAGE -->
+  <div class="toast" id="toast"></div>
+</body>
+</html>
